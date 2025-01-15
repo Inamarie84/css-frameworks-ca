@@ -6,124 +6,205 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/style.css" />
     <script src="js/script.js" defer></script>
-    <title>Document</title>
+    <title>Authentication page</title>
   </head>
-  <body class="bg-gray-400 min-h-screen grid grid-rows-[auto_1fr_auto]">
-    <header class="bg-white shadow-lg">
-      <nav class="container mx-auto">
-        <div class="flex justify-between">
-          <a href="/" class="flex items-center py-4 px-2">
-            <span class="text-lg font-bold text-gray-500">Logo</span>
-          </a>
-          <div class="hidden md:flex items-center space-x-1">
-            <a
-              href="#"
-              class="font-heading py-4 px-2 text-green-500 font-semibold border-b-4 border-green-500"
-              >Home</a
-            >
-            <a
-              href="#"
-              class="py-4 px-2 text-gray-500 font-semibold hover:text-green-600 transition duration-300"
-              >Profile</a
-            >
-            <a
-              href="#"
-              class="py-4 px-2 text-gray-500 font-semibold hover:text-green-600 transition duration-300"
-              >Feed</a
-            >
-            <a
-              href="#"
-              class="py-4 px-2 text-gray-500 font-semibold hover:text-green-600 transition duration-300"
-              >About and Contact</a
-            >
-          </div>
+  <body
+    class="min-h-screen bg-cover bg-center relative flex flex-col"
+    style="background-image: url('images/backgroundimage.jpg')"
+  >
+    <!-- Gradient Overlay -->
+    <div
+      class="absolute inset-0 bg-white opacity-60 pointer-events-none z-0"
+    ></div>
 
-          <div class="hidden md:flex items-center space-x-3">
-            <a
-              href="#"
-              class="py-4 px-2 font-medium text-gray-500 rounded hover:bg-green-500 hover:text-white transition duration-300"
-              >Log in</a
-            >
-            <a
-              href="#"
-              class="py-4 px-2 font-medium text-gray-500 rounded hover:bg-green-500 hover:text-white transition duration-300"
-              >Sign up</a
-            >
-          </div>
+    <!-- Content Wrapper -->
+    <div class="relative z-10 flex-grow">
+      <header
+        class="bg-white shadow-lg py-7 flex items-center justify-center px-7"
+      >
+        <div class="flex items-center">
+          <h1
+            class="font-heading font-thin text-custom-pink text-5xl py-4 mr-4"
+          >
+            Join our SOCIAL Running Community
+          </h1>
+          <video
+            id="logo-video"
+            src="images/runsociallogo.mp4"
+            autoplay
+            muted
+            class="w-16 h-16 rounded-full"
+          ></video>
+        </div>
+      </header>
 
-          <div class="flex md:hidden items-center">
-            <button id="menu-btn">
-              <svg
-                class="w-6 h-6 text-gray-500 hover:text-green-500"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
+      <main class="container mx-auto my-7">
+        <section>
+          <h2
+            class="font-heading text-4xl font-light text-center text-custom-pink py-4"
+          >
+            RunSocial
+          </h2>
+          <p class="font-sans text-xl text-dark-gray text-center px-60">
+            Track your runs, stay motivated, boost performance and celebrate
+            your achievements with fellow SOCIAL runners!
+          </p>
+          <p class="font-sans text-lg text-dark-gray text-center py-6">
+            Log In or Sign Up today - to Join the RunSocial community:
+          </p>
+        </section>
+        <section>
+          <form
+            id="login-form"
+            action="/profile"
+            method="POST"
+            class="space-y-4"
+          >
+            <div>
+              <label
+                for="login-email"
+                class="block text-sm font-medium text-dark-gray"
+                >Email</label
               >
-                <path d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
+              <input
+                type="email"
+                id="login-email"
+                name="email"
+                class="w-full p-3 mt-1 border rounded-md"
+                required
+                placeholder="Enter your email"
+              />
+            </div>
+
+            <div>
+              <label
+                for="login-password"
+                class="block text-sm font-medium text-dark-gray"
+                >Password</label
+              >
+              <input
+                type="password"
+                id="login-password"
+                name="password"
+                class="w-full p-3 mt-1 border rounded-md"
+                required
+                minlength="8"
+                placeholder="Enter your password"
+              />
+            </div>
+
+            <div class="flex justify-between items-center">
+              <a href="#" class="text-sm text-blue-600">Forgot Password?</a>
+            </div>
+
+            <button
+              type="submit"
+              class="w-full bg-teal text-white p-3 rounded-md"
+            >
+              Log In
             </button>
-          </div>
-        </div>
 
-        <div class="hidden" id="mobile-menu">
-          <ul>
-            <li>
-              <a
-                href="index/html"
-                class="block text-sm py-4 px-2 bg-green-500 text-white font-semibold"
-                >Home</a
+            <div class="mt-4 text-center">
+              <span>Don't have an account?</span>
+              <button type="button" id="show-register" class="text-blue-600">
+                Sign Up
+              </button>
+            </div>
+          </form>
+
+          <!-- Registration Form -->
+          <form
+            id="register-form"
+            action="/profile"
+            method="POST"
+            class="space-y-4 hidden"
+          >
+            <div>
+              <label
+                for="register-username"
+                class="block text-sm font-medium text-dark-gray"
+                >Username</label
               >
-            </li>
-            <li>
-              <a
-                href="#Profile"
-                class="block text-sm py-4 px-2 hover:bg-green-500 hover:text-white transition duration-300"
-                >Profile</a
+              <input
+                type="text"
+                id="register-username"
+                name="username"
+                class="w-full p-3 mt-1 border rounded-md"
+                required
+                placeholder="Choose a username"
+              />
+            </div>
+
+            <div>
+              <label
+                for="register-email"
+                class="block text-sm font-medium text-dark-gray"
+                >Email</label
               >
-            </li>
-            <li>
-              <a
-                href="#Feed"
-                class="block text-sm py-4 px-2 hover:bg-green-500 hover:text-white transition duration-300"
-                >Feed</a
+              <input
+                type="email"
+                id="register-email"
+                name="email"
+                class="w-full p-3 mt-1 border rounded-md"
+                required
+                placeholder="Enter your email"
+              />
+            </div>
+
+            <div>
+              <label
+                for="register-password"
+                class="block text-sm font-medium text-dark-gray"
+                >Password</label
               >
-            </li>
-            <li>
-              <a
-                href="#About"
-                class="block text-sm py-4 px-2 hover:bg-green-500 hover:text-white transition duration-300"
-                >About and Contact</a
+              <input
+                type="password"
+                id="register-password"
+                name="password"
+                class="w-full p-3 mt-1 border rounded-md"
+                required
+                minlength="8"
+                placeholder="Enter a password (min 8 characters)"
+              />
+            </div>
+
+            <div>
+              <label
+                for="confirm-password"
+                class="block text-sm font-medium text-dark-gray"
+                >Confirm Password</label
               >
-            </li>
-            <li>
-              <a
-                href="#LogIn"
-                class="block text-sm py-4 px-2 hover:bg-green-500 hover:text-white transition duration-300"
-                >Log in</a
-              >
-            </li>
-            <li>
-              <a
-                href="#SignUp"
-                class="block text-sm py-4 px-2 hover:bg-green-500 hover:text-white transition duration-300"
-                >Sign up</a
-              >
-            </li>
-          </ul>
-        </div>
-      </nav>
-    </header>
-    <main class="container mx-auto my-7">
-      <section>
-        <h1 class="font-heading text-3xl font-thin text-red-600">Heading</h1>
-        <p class="font-sans text-gray-500">Content</p>
-      </section>
-    </main>
-    <footer class="font-sans bg-white py-5">
+              <input
+                type="password"
+                id="confirm-password"
+                name="confirm-password"
+                class="w-full p-3 mt-1 border rounded-md"
+                required
+                minlength="8"
+                placeholder="Confirm your password"
+              />
+            </div>
+
+            <button
+              type="submit"
+              class="w-full bg-soft-yellow text-white p-3 rounded-md"
+            >
+              Sign Up
+            </button>
+
+            <div class="mt-4 text-center">
+              <span>Already have an account?</span>
+              <button type="button" id="show-login" class="text-blue-600">
+                Log In
+              </button>
+            </div>
+          </form>
+        </section>
+      </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="font-sans bg-white py-5 mt-auto z-10">
       <p class="container mx-auto text-center">Copyright &copy; 2024</p>
     </footer>
   </body>
