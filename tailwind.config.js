@@ -5,6 +5,7 @@ module.exports = {
     extend: {
       colors: {
         "custom-pink": "#ED5AB4", // Your custom pink
+        "light-custom-pink": "#F9BFD9", // Lighter pink
         teal: "#4C9F70", // Teal
         orange: "#FF7F32", // Orange
         "light-blue": "#A2D9FF", // Light Blue
