@@ -8,32 +8,37 @@
     <script src="/js/script.js" defer></script>
     <title>Document</title>
   </head>
-  <body class="bg-gray-400 min-h-screen grid grid-rows-[auto_1fr_auto]">
-    <header class="bg-white shadow-lg">
-      <nav class="container mx-auto">
+  <body class="bg-teal bg-opacity-20 min-h-screen grid grid-rows-[auto_1fr_auto]">
+    <header class="bg-white shadow-lg py-4">
+      <nav class="container mx-auto text-lg font-normal">
         <div class="flex justify-between">
           <a href="/" class="flex items-center py-4 px-2">
-            <span class="text-lg font-bold text-gray-500">Logo</span>
-          </a>
+            <video
+              id="logo-video"
+              src="/images/runsociallogo.mp4"
+              autoplay
+              muted
+              class="w-16 h-16 rounded-full"
+            ></video>
           <div class="hidden md:flex items-center space-x-1">
             <a
-              href="#"
-              class="font-heading py-4 px-2 text-green-500 font-semibold border-b-4 border-green-500"
+              href="/"
+              class="py-4 px-2 text-teal font-normal hover:text-hover-teal transition duration-300"
               >Home</a
             >
             <a
-              href="#"
-              class="py-4 px-2 text-gray-500 font-semibold hover:text-green-600 transition duration-300"
+              href="/profile/index.html"
+              class="py-4 px-2 text-teal font-normal hover:text-hover-teal transition duration-300"
               >Profile</a
             >
             <a
-              href="#"
-              class="py-4 px-2 text-gray-500 font-semibold hover:text-green-600 transition duration-300"
+              href="/feed/index.html"
+              class="py-2 px-2 text-teal border-b-2 border-teal"
               >Feed</a
             >
             <a
-              href="#"
-              class="py-4 px-2 text-gray-500 font-semibold hover:text-green-600 transition duration-300"
+              href=""
+              class="py-4 px-2 text-teal font-normal hover:text-hover-teal transition duration-300"
               >About and Contact</a
             >
           </div>
@@ -41,14 +46,14 @@
           <div class="hidden md:flex items-center space-x-3">
             <a
               href="#"
-              class="py-4 px-2 font-medium text-gray-500 rounded hover:bg-green-500 hover:text-white transition duration-300"
-              >Log in</a
+              class="py-4 px-2 font-normal text-teal rounded hover:bg-hover-teal hover:text-white transition duration-300"
+              >Log out</a
             >
-            <a
+            <!-- <a
               href="#"
               class="py-4 px-2 font-medium text-gray-500 rounded hover:bg-green-500 hover:text-white transition duration-300"
               >Sign up</a
-            >
+            > -->
           </div>
 
           <div class="flex md:hidden items-center">
@@ -73,14 +78,14 @@
           <ul>
             <li>
               <a
-                href="index/html"
+                href="/"
                 class="block text-sm py-4 px-2 bg-green-500 text-white font-semibold"
                 >Home</a
               >
             </li>
             <li>
               <a
-                href="#Profile"
+                href="/profile/index.html"
                 class="block text-sm py-4 px-2 hover:bg-green-500 hover:text-white transition duration-300"
                 >Profile</a
               >
@@ -117,10 +122,47 @@
         </div>
       </nav>
     </header>
-    <main class="container mx-auto my-7">
+    <main class="container mx-auto my-7 flex items-center justify-center h-screen">
       <section>
-        <h1 class="font-heading text-3xl font-thin text-red-600">Heading</h1>
-        <p class="font-sans text-gray-500">Content</p>
+        <h1 class="text-3xl font-light text-custom-pink py-4">RunSocial Feed</h1>
+       <div class="relative w-80 h-96 bg-white shadow-lg rounded-lg overflow-hidden group">
+  <!-- Background Image -->
+  <div
+    class="w-full h-full bg-cover bg-center"
+    style="background-image: url('/images/runner1.jpg')"
+  ></div>
+
+  <!-- Overlay -->
+  <div class="absolute inset-0 bg-dark-gray bg-opacity-40 flex items-center justify-center text-white text-lg opacity-0 group-hover:opacity-100 transition-opacity">
+    Great job
+  </div>
+
+  <!-- Card Content -->
+  <div class="absolute bottom-0 left-0 right-0 p-4 bg-white bg-opacity-80 backdrop-blur-md">
+    <h2 class="text-xl font-semibold text-dark-gray">Card Title</h2>
+    <p class="text-gray-600 mt-1">Card description</p>
+  </div>
+
+  <!-- Heart Icon -->
+  <div class="absolute top-4 right-4 text-white group-hover:text-custom-pink transition-colors">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="currentColor"
+      viewBox="0 0 24 24"
+      stroke-width="1.5"
+      stroke="currentColor"
+      class="w-6 h-6"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"
+      />
+    </svg>
+  </div>
+</div>
+
+        
       </section>
     </main>
     <footer class="font-sans bg-white py-5">
