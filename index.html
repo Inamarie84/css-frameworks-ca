@@ -14,18 +14,13 @@
     <link rel="manifest" href="/images/site.webmanifest" />
     <link rel="stylesheet" href="/css/style.css" />
     <script src="/js/script.js" defer></script>
-    <title>RunSocial Home</title>
+    <title>RunSocial</title>
   </head>
-  <body
-    class="min-h-screen bg-cover bg-center relative flex flex-col"
-    style="background-image: url('images/backgroundimage.jpg')"
-  >
-    <div
-      class="absolute inset-0 bg-white opacity-60 pointer-events-none z-0"
-    ></div>
-
+  <body class="min-h-screen bg-custom-bg bg-cover bg-center bg-no-repeat flex flex-col relative">
+    <div class="absolute inset-0 bg-white opacity-80 pointer-events-none z-0"></div>
+  
     <div class="relative z-10 flex-grow">
-      <header class="bg-white shadow-lg bg-gradient-to-r from-white to-gray-100 py-4 flex items-center justify-center">
+      <header class="bg-white shadow-lg bg-gradient-to-r from-white to-gray-100 py-4 flex items-center justify-center mb-10">
         <div class="flex items-center">
           <h1
             class="font-heading font-thin text-custom-pink text-3xl sm:text-4xl md:text-5xl py-4 mr-4"
@@ -44,13 +39,13 @@
       </header>
 
       <main class="container mx-auto my-7 px-4">
-        <section class="bg-light-gray bg-opacity-50 rounded-md mb-8">
+        <section class="bg-light-gray bg-opacity-70 rounded-md mb-8 max-w-md mx-auto">
           <h2
             class="text-3xl sm:text-4xl font-light text-center text-custom-pink py-4"
           >
             RunSocial
           </h2>
-          <p class="text-xl text-dark-gray text-center px-4 sm:px-10 lg:px-60">
+          <p class="text-xl text-dark-gray text-center px-4">
             Track your runs, stay motivated, boost performance, and celebrate
             your achievements with fellow SOCIAL runners!
           </p>
@@ -58,8 +53,10 @@
             Join the RunSocial Community - Log In or Sign Up today:
           </p>
         </section>
+        
 
-        <section>
+        <section class="max-w-md mx-auto">
+          <!-- Login Form -->
           <form
             id="login-form"
             action="/profile"
@@ -81,7 +78,7 @@
                 placeholder="Enter your email"
               />
             </div>
-
+        
             <div>
               <label
                 for="login-password"
@@ -98,26 +95,26 @@
                 placeholder="Enter your password"
               />
             </div>
-
+        
             <div class="flex justify-between items-center">
-              <a href="/" class="text-sm text-blue-600">Forgot Password?</a>
+              <a href="/" class="text-sm font-semibold text-blue-600">Forgot Password?</a>
             </div>
-
+        
             <button
               type="submit"
               class="w-full bg-teal text-dark-grey shadow-lg font-semibold p-3 rounded-md hover:bg-hover-teal hover:text-white"
             >
               Log In
             </button>
-
+        
             <div class="mt-4 text-center">
               <span>Don't have an account?</span>
-              <button type="button" id="show-register" class="text-blue-600">
+              <button type="button" id="show-register" class="text-blue-600 font-semibold">
                 Sign Up
               </button>
             </div>
           </form>
-
+        
           <!-- Registration Form -->
           <form
             id="register-form"
@@ -140,7 +137,7 @@
                 placeholder="Choose a username"
               />
             </div>
-
+        
             <div>
               <label
                 for="register-email"
@@ -156,7 +153,7 @@
                 placeholder="Enter your email"
               />
             </div>
-
+        
             <div>
               <label
                 for="register-password"
@@ -173,7 +170,7 @@
                 placeholder="Enter a password (min 8 characters)"
               />
             </div>
-
+        
             <div>
               <label
                 for="confirm-password"
@@ -190,14 +187,14 @@
                 placeholder="Confirm your password"
               />
             </div>
-
+        
             <button
               type="submit"
               class="w-full bg-teal text-dark-grey shadow-lg font-semibold p-3 rounded-md hover:bg-hover-teal hover:text-white"
             >
               Sign Up
             </button>
-
+        
             <div class="mt-4 text-center">
               <span>Already have an account?</span>
               <button type="button" id="show-login" class="text-blue-600">
@@ -205,6 +202,8 @@
               </button>
             </div>
           </form>
+        </section>
+        
         </section>
       </main>
     </div>
