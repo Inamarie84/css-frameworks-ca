@@ -20,16 +20,12 @@
     class="min-h-screen bg-cover bg-center relative flex flex-col"
     style="background-image: url('images/backgroundimage.jpg')"
   >
-    <!-- Gradient Overlay -->
     <div
       class="absolute inset-0 bg-white opacity-60 pointer-events-none z-0"
     ></div>
 
-    <!-- Content Wrapper -->
     <div class="relative z-10 flex-grow">
-      <header
-        class="bg-white shadow-lg py-4 flex items-center justify-center px-7"
-      >
+      <header class="bg-white shadow-lg bg-gradient-to-r from-white to-gray-100 py-4 flex items-center justify-center">
         <div class="flex items-center">
           <h1
             class="font-heading font-thin text-custom-pink text-3xl sm:text-4xl md:text-5xl py-4 mr-4"
@@ -41,7 +37,8 @@
             src="images/runsociallogo.mp4"
             autoplay
             muted
-            class="w-16 h-16 rounded-full"
+            class="w-20 h-20 rounded-full shadow-md"
+            aria-label="RunSocial logo animation"
           ></video>
         </div>
       </header>
@@ -108,7 +105,7 @@
 
             <button
               type="submit"
-              class="w-full bg-teal text-button-grey shadow-sm font-semibold p-3 rounded-md hover:bg-hover-teal hover:text-white"
+              class="w-full bg-teal text-dark-grey shadow-lg font-semibold p-3 rounded-md hover:bg-hover-teal hover:text-white"
             >
               Log In
             </button>
@@ -196,7 +193,7 @@
 
             <button
               type="submit"
-              class="w-full bg-teal text-button-grey shadow-sm font-semibold p-3 rounded-md hover:bg-hover-teal hover:text-white"
+              class="w-full bg-teal text-dark-grey shadow-lg font-semibold p-3 rounded-md hover:bg-hover-teal hover:text-white"
             >
               Sign Up
             </button>
@@ -213,8 +210,11 @@
     </div>
 
     <!-- Footer -->
-    <footer class="font-sans bg-white py-5 mt-auto z-10">
+    <footer class="bg-white bg-gradient-to-r from-white to-gray-100 py-5 mt-auto z-10">  
       <p class="container mx-auto text-center">Copyright &copy; 2024</p>
+      <p class="font-heading text-custom-pink text-lg text-center">RunSocial</p>
     </footer>
+  </body>
+</html>
   </body>
 </html>
