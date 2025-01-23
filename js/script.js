@@ -61,4 +61,14 @@ document.addEventListener('DOMContentLoaded', () => {
       window.location.href = '/profile' // Redirect to profile page
     })
   }
+
+  // Skeleton loader functionality
+  setTimeout(() => {
+    const skeletonLoader = document.getElementById('skeleton-loader')
+    const contentFeed = document.getElementById('content-feed')
+    if (skeletonLoader && contentFeed) {
+      skeletonLoader.classList.add('hidden')
+      contentFeed.classList.remove('hidden')
+    }
+  }, 2000) // Simulates a 2-second loading time
 })
