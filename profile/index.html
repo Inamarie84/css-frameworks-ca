@@ -24,7 +24,7 @@
     >
       <nav class="container mx-auto text-lg font-normal">
         <div class="flex justify-between">
-          <a href="/" class="flex items-center py-4 px-4">
+          <a href="/" class="flex items-center py-4 px-4" aria-label="Go to home page">
             <video
               id="logo-video"
               src="/images/runsociallogo.mp4"
@@ -33,6 +33,7 @@
               class="w-20 h-20 rounded-full shadow-md"
               aria-label="RunSocial logo animation"
             ></video>
+            <span class="sr-only">Home</span>
           </a>
           <div class="hidden md:flex items-center space-x-1">
             <a
@@ -126,7 +127,25 @@
         </div>
       </nav>
     </header>
+    
     <main class="container mx-auto my-7">
+      <div id="skeleton-loader-profile" class="container mx-auto my-7">
+        <div class="animate-pulse">
+          <div class="flex justify-center">
+            <div class="w-40 h-40 bg-gray-300 rounded-full mb-4"></div>
+          </div>
+          <div class="h-8 bg-gray-300 rounded mx-auto max-w-xs mb-4"></div>
+          <div class="h-4 bg-gray-300 rounded mx-auto max-w-sm mb-4"></div>
+          <div class="h-12 bg-gray-300 rounded mx-auto max-w-md mb-4"></div>
+          <div class="grid grid-cols-1 gap-6 mt-8">
+            <div class="h-64 bg-gray-300 rounded w-full"></div>
+            <div class="h-64 bg-gray-300 rounded w-full"></div>
+            <div class="h-64 bg-gray-300 rounded w-full"></div>
+          </div>
+        </div>
+      </div>
+
+      <div id="profile-content" class="hidden">
       <section class="flex flex-col items-center text-center">
         <img
           src="/images/profilepic.jpeg"
@@ -152,9 +171,9 @@
 
         <div class="flex justify-center mx-auto max-w-4xl px-4">
           <div class="grid grid-cols-1 gap-10 w-full">
-            <!-- Post 1 -->
+            
             <div
-              class="post bg-white p-4 rounded-lg shadow-md max-w-md mx-auto w-full"
+              class="bg-white bg-gradient-to-r from-white to-gray-100 p-4 rounded-lg shadow-md max-w-md mx-auto w-full"
             >
               <img
                 src="/images/runner1.jpg"
@@ -170,9 +189,8 @@
               </p>
             </div>
 
-            <!-- Post 2 -->
             <div
-              class="post bg-white p-4 rounded-lg shadow-md max-w-md mx-auto w-full"
+              class="bg-white bg-gradient-to-r from-white to-gray-100 p-4 rounded-lg shadow-md max-w-md mx-auto w-full"
             >
               <img
                 src="/images/runner1.jpg"
@@ -188,9 +206,8 @@
               </p>
             </div>
 
-            <!-- Post 3 -->
             <div
-              class="post bg-white p-4 rounded-lg shadow-md max-w-md mx-auto w-full"
+              class="bg-white bg-gradient-to-r from-white to-gray-100 p-4 rounded-lg shadow-md max-w-md mx-auto w-full"
             >
               <img
                 src="/images/runner1.jpg"
@@ -207,9 +224,8 @@
               </p>
             </div>
 
-            <!-- Post 4 -->
             <div
-              class="post bg-white p-4 rounded-lg shadow-md max-w-md mx-auto w-full"
+              class="bg-white bg-gradient-to-r from-white to-gray-100 p-4 rounded-lg shadow-md max-w-md mx-auto w-full"
             >
               <img
                 src="/images/runner1.jpg"
@@ -225,9 +241,8 @@
               </p>
             </div>
 
-            <!-- Post 5 -->
             <div
-              class="post bg-white p-4 rounded-lg shadow-md max-w-md mx-auto w-full"
+              class="bg-white bg-gradient-to-r from-white to-gray-100 p-4 rounded-lg shadow-md max-w-md mx-auto w-full"
             >
               <img
                 src="/images/runner1.jpg"
@@ -245,6 +260,7 @@
           </div>
         </div>
       </section>
+    </div>
     </main>
 
     <footer class="bg-white bg-gradient-to-r from-white to-gray-100 py-5 mt-auto z-10 shadow-t-lg">

@@ -6,16 +6,13 @@
 
 @layer base {
   body {
-    @apply font-sans; /* Apply `font-sans` globally to body */
+    @apply font-sans;
   }
 
   h1,
   h2,
   h3,
-  h4,
-  h5,
-  h6,
   nav {
-    @apply font-heading; /* Apply `font-heading` globally to headings */
+    @apply font-heading;
   }
 }

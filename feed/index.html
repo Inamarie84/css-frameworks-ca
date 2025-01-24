@@ -20,7 +20,7 @@
     <header class="bg-white bg-gradient-to-r from-white to-gray-100 shadow-lg py-2">
       <nav class="container mx-auto text-lg font-normal">
         <div class="flex justify-between">
-          <a href="/" class="flex items-center py-4 px-4">
+          <a href="/" class="flex items-center py-4 px-4" aria-label="Go to home page">
             <video
               id="logo-video"
               src="/images/runsociallogo.mp4"
@@ -29,6 +29,7 @@
               class="w-20 h-20 rounded-full shadow-md"
               aria-label="RunSocial logo animation"
             ></video>
+            <span class="sr-only">Home</span>
           </a>
           <div class="hidden md:flex items-center space-x-1">
             <a
@@ -127,12 +128,11 @@
         RunSocial Feed
       </h1>
 
-       <!-- Skeleton Loader -->
   <div
   id="skeleton-loader"
   class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 w-full"
 >
-  <!-- Skeleton Card -->
+  
   <div class="bg-white bg-gradient-to-r from-white to-gray-100 p-4 rounded-lg shadow-md max-w-md mx-auto w-full animate-pulse">
     <div class="relative h-32 bg-gray-300 rounded-lg mb-4"></div>
     <div class="h-6 bg-gray-300 rounded mb-4 w-3/4"></div>
@@ -140,7 +140,6 @@
     <div class="h-4 bg-gray-300 rounded w-5/6"></div>
   </div>
 
-  <!-- Duplicate the Skeleton Card 5-7 more times -->
   <div class="bg-white bg-gradient-to-r from-white to-gray-100 p-4 rounded-lg shadow-md max-w-md mx-auto w-full animate-pulse">
     <div class="relative h-32 bg-gray-300 rounded-lg mb-4"></div>
     <div class="h-6 bg-gray-300 rounded mb-4 w-3/4"></div>
@@ -191,15 +190,12 @@
   </div>
 </div>
 
-
-
+<section id="content-feed-wrapper" class="hidden">
       <div
       id="content-feed"
-        class="hidden grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 w-full"
+        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 w-full"
       >
-        <!-- Card 1 -->
         <div class="bg-white bg-gradient-to-r from-white to-gray-100 p-4 rounded-lg shadow-md max-w-md mx-auto w-full group relative">
-          <!-- Image with Overlay -->
           <div class="relative">
             <img
               src="/images/runner1.jpg"
@@ -213,7 +209,6 @@
                 Great job!!!
               </span>
             </div>
-            <!-- Heart Icon -->
             <div
               class="absolute top-4 right-4 text-white group-hover:text-custom-pink transition-colors"
             >
@@ -234,7 +229,7 @@
             </div>
           </div>
         
-          <!-- Content -->
+          <h2 class="text-teal font-normal text-sm mb-2">#MikeTheRunner</h2>
           <h3 class="text-xl font-normal text-custom-pink mb-4">
             Back to Running After Injury
           </h3>
@@ -242,11 +237,8 @@
             I’m back on track after my injury. Today was my first run without pain, and it feels like such a victory!
           </p>
         </div>
-        
-
-        <!-- Card 2 -->
+      
         <div class="bg-white bg-gradient-to-r from-white to-gray-100 p-4 rounded-lg shadow-md max-w-md mx-auto w-full group relative">
-          <!-- Image with Overlay -->
           <div class="relative">
             <img
               src="/images/runner1.jpg"
@@ -260,7 +252,6 @@
                 Great job!!!
               </span>
             </div>
-            <!-- Heart Icon -->
             <div
               class="absolute top-4 right-4 text-white group-hover:text-custom-pink transition-colors"
             >
@@ -280,8 +271,7 @@
               </svg>
             </div>
           </div>
-        
-          <!-- Content -->
+          <h2 class="text-teal font-normal text-sm mb-2">#UsainBolt</h2>
           <h3 class="text-xl font-normal text-custom-pink mb-4">
             Sunrise Sprint
           </h3>
@@ -290,10 +280,8 @@
           </p>
         </div>
         
-
-        <!-- Card 3 -->
         <div class="bg-white bg-gradient-to-r from-white to-gray-100 p-4 rounded-lg shadow-md max-w-md mx-auto w-full group relative">
-          <!-- Image with Overlay -->
+
           <div class="relative">
             <img
               src="/images/runner1.jpg"
@@ -307,7 +295,7 @@
                 Great job!!!
               </span>
             </div>
-            <!-- Heart Icon -->
+            
             <div
               class="absolute top-4 right-4 text-white group-hover:text-custom-pink transition-colors"
             >
@@ -328,7 +316,7 @@
             </div>
           </div>
         
-          <!-- Content -->
+          <h2 class="text-teal font-normal text-sm mb-2">#TheTrailMaster</h2>
           <h3 class="text-xl font-normal text-custom-pink mb-4">
             Trailblazer Adventure
           </h3>
@@ -337,10 +325,7 @@
           </p>
         </div>
         
-
-        <!-- Card 4 -->
         <div class="bg-white bg-gradient-to-r from-white to-gray-100 p-4 rounded-lg shadow-md max-w-md mx-auto w-full group relative">
-          <!-- Image with Overlay -->
           <div class="relative">
             <img
               src="/images/runner1.jpg"
@@ -354,7 +339,6 @@
                 Great job!!!
               </span>
             </div>
-            <!-- Heart Icon -->
             <div
               class="absolute top-4 right-4 text-white group-hover:text-custom-pink transition-colors"
             >
@@ -374,8 +358,7 @@
               </svg>
             </div>
           </div>
-        
-          <!-- Content -->
+          <h2 class="text-teal font-normal text-sm mb-2">#MarathonMan</h2>
           <h3 class="text-xl font-normal text-custom-pink mb-4">
             Marathon Milestone
           </h3>
@@ -384,10 +367,8 @@
           </p>
         </div>
         
-
-        <!-- Card 5 -->
         <div class="bg-white bg-gradient-to-r from-white to-gray-100 p-4 rounded-lg shadow-md max-w-md mx-auto w-full group relative">
-          <!-- Image with Overlay -->
+          
           <div class="relative">
             <img
               src="/images/runner1.jpg"
@@ -401,7 +382,7 @@
                 Great job!!!
               </span>
             </div>
-            <!-- Heart Icon -->
+            
             <div
               class="absolute top-4 right-4 text-white group-hover:text-custom-pink transition-colors"
             >
@@ -422,7 +403,7 @@
             </div>
           </div>
         
-          <!-- Content -->
+          <h2 class="text-teal font-normal text-sm mb-2">#MayaJogs</h2>
           <h3 class="text-xl font-normal text-custom-pink mb-4">
             Run Crew Reunion
           </h3>
@@ -431,9 +412,9 @@
           </p>
         </div>
         
-        <!-- Card 6 -->
+        
         <div class="bg-white bg-gradient-to-r from-white to-gray-100 p-4 rounded-lg shadow-md max-w-md mx-auto w-full group relative">
-          <!-- Image with Overlay -->
+          
           <div class="relative">
             <img
               src="/images/runner1.jpg"
@@ -447,7 +428,7 @@
                 Great job!!!
               </span>
             </div>
-            <!-- Heart Icon -->
+            
             <div
               class="absolute top-4 right-4 text-white group-hover:text-custom-pink transition-colors"
             >
@@ -468,7 +449,7 @@
             </div>
           </div>
         
-          <!-- Content -->
+          <h2 class="text-teal font-normal text-sm mb-2">#RonnyRuns</h2>
           <h3 class="text-xl font-normal text-custom-pink mb-4">
             Record-Breaking Day
           </h3>
@@ -477,9 +458,8 @@
           </p>
         </div>
         
-        <!-- Card 7 -->
+        
         <div class="bg-white bg-gradient-to-r from-white to-gray-100 p-4 rounded-lg shadow-md max-w-md mx-auto w-full group relative">
-          <!-- Image with Overlay -->
           <div class="relative">
             <img
               src="/images/runner1.jpg"
@@ -493,7 +473,7 @@
                 Great job!!!
               </span>
             </div>
-            <!-- Heart Icon -->
+           
             <div
               class="absolute top-4 right-4 text-white group-hover:text-custom-pink transition-colors"
             >
@@ -514,7 +494,7 @@
             </div>
           </div>
         
-          <!-- Content -->
+          <h2 class="text-teal font-normal text-sm mb-2">#ScenicRunner</h2>
           <h3 class="text-xl font-normal text-custom-pink mb-4">
             Scenic Route Escape
           </h3>
@@ -524,9 +504,9 @@
         </div>
         
 
-<!-- Card 8 -->
+
 <div class="post bg-white bg-gradient-to-r from-white to-gray-100 p-4 rounded-lg shadow-md max-w-md mx-auto w-full group relative">
-  <!-- Image with Overlay -->
+  
   <div class="relative">
     <img
       src="/images/runner1.jpg"
@@ -540,7 +520,7 @@
         Great job!!!
       </span>
     </div>
-    <!-- Heart Icon -->
+   
     <div
       class="absolute top-4 right-4 text-white group-hover:text-custom-pink transition-colors"
     >
@@ -561,7 +541,7 @@
     </div>
   </div>
 
-  <!-- Content -->
+  <h2 class="text-teal font-normal text-sm mb-2">#SocialRunner</h2>
   <h3 class="text-xl font-normal text-custom-pink mb-4">
     Community Fun Run
   </h3>
@@ -571,9 +551,9 @@
 </div>
 
       </div>
+</section>
     </main>
 
-    <!-- Footer -->
     <footer class="bg-white bg-gradient-to-r from-white to-gray-100 py-5 mt-auto z-10 shadow-t-lg">
       <p class="container mx-auto text-center">Copyright &copy; 2024</p>
       <p class="font-heading text-custom-pink text-lg text-center">RunSocial</p>

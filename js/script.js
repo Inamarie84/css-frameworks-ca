@@ -2,14 +2,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const btn = document.querySelector('#menu-btn')
   const menu = document.querySelector('#mobile-menu')
 
-  // Toggle mobile menu
   if (btn && menu) {
     btn.addEventListener('click', () => {
       menu.classList.toggle('hidden')
     })
   }
 
-  // Utility function to toggle forms
   function toggleForms(showFormId, hideFormId) {
     const showForm = document.getElementById(showFormId)
     const hideForm = document.getElementById(hideFormId)
@@ -19,7 +17,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // Show registration form
   const showRegisterBtn = document.getElementById('show-register')
   if (showRegisterBtn) {
     showRegisterBtn.addEventListener('click', () => {
@@ -27,7 +24,6 @@ document.addEventListener('DOMContentLoaded', () => {
     })
   }
 
-  // Show login form
   const showLoginBtn = document.getElementById('show-login')
   if (showLoginBtn) {
     showLoginBtn.addEventListener('click', () => {
@@ -35,40 +31,18 @@ document.addEventListener('DOMContentLoaded', () => {
     })
   }
 
-  // Handle login form submission
-  const loginForm = document.getElementById('login-form')
-  if (loginForm) {
-    loginForm.addEventListener('submit', (e) => {
-      e.preventDefault()
-      window.location.href = '/profile' // Redirect to profile page
-    })
-  }
-
-  // Handle registration form submission
-  const registerForm = document.getElementById('register-form')
-  if (registerForm) {
-    registerForm.addEventListener('submit', (e) => {
-      e.preventDefault()
-
-      const password = document.getElementById('register-password')?.value
-      const confirmPassword = document.getElementById('confirm-password')?.value
-
-      if (password !== confirmPassword) {
-        alert('Passwords do not match.')
-        return
+  function handleSkeletonLoader(loaderId, contentWrapperId, delay) {
+    setTimeout(() => {
+      const loader = document.getElementById(loaderId)
+      const contentWrapper = document.getElementById(contentWrapperId)
+      if (loader && contentWrapper) {
+        loader.classList.add('hidden')
+        contentWrapper.classList.remove('hidden')
       }
-
-      window.location.href = '/profile' // Redirect to profile page
-    })
+    }, delay)
   }
 
-  // Skeleton loader functionality
-  setTimeout(() => {
-    const skeletonLoader = document.getElementById('skeleton-loader')
-    const contentFeed = document.getElementById('content-feed')
-    if (skeletonLoader && contentFeed) {
-      skeletonLoader.classList.add('hidden')
-      contentFeed.classList.remove('hidden')
-    }
-  }, 2000) // Simulates a 2-second loading time
+  handleSkeletonLoader('skeleton-loader', 'content-feed-wrapper', 1500)
+
+  handleSkeletonLoader('skeleton-loader-profile', 'profile-content', 1500)
 })
