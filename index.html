@@ -61,18 +61,13 @@
           <hr class="w-1/2 border-t-2 border-gray-300 my-2 mx-auto" />
 
           <p class="text-2xl font-semibold text-teal text-center py-8">
-            Log In or Sign Up today:
+            Join RunSocial!
           </p>
         </section>
 
         <section class="max-w-md mx-auto">
-          <!-- Login Form -->
-          <form
-            id="login-form"
-            action="/profile/index.html"
-            method="POST"
-            class="space-y-4"
-          >
+          <h3 class="text-custom-pink mb-6 text-2xl">Log In or Sign up:</h3>
+          <form id="login-form" action="/profile/index.html" class="space-y-4">
             <div>
               <label
                 for="login-email"
@@ -86,11 +81,7 @@
                 class="w-full p-3 mt-1 border rounded-md"
                 required
                 placeholder="Enter your email"
-                aria-describedby="email-error"
               />
-              <p id="email-error" class="text-red-500 text-xs hidden">
-                Please enter a valid email address.
-              </p>
             </div>
 
             <div>
@@ -107,11 +98,7 @@
                 required
                 minlength="8"
                 placeholder="Enter your password"
-                aria-describedby="password-error"
               />
-              <p id="password-error" class="text-red-500 text-xs hidden">
-                Password must be at least 8 characters long.
-              </p>
             </div>
 
             <div class="flex justify-between items-center">
@@ -139,13 +126,7 @@
             </div>
           </form>
 
-          <!-- Registration Form -->
-          <form
-            id="register-form"
-            action="/profile"
-            method="POST"
-            class="space-y-4 hidden"
-          >
+          <form id="register-form" action="/profile" class="space-y-4 hidden">
             <div>
               <label
                 for="register-username"
@@ -159,11 +140,7 @@
                 class="w-full p-3 mt-1 border rounded-md"
                 required
                 placeholder="Choose a username"
-                aria-describedby="username-error"
               />
-              <p id="username-error" class="text-red-500 text-xs hidden">
-                Username is required.
-              </p>
             </div>
 
             <div>
@@ -179,11 +156,7 @@
                 class="w-full p-3 mt-1 border rounded-md"
                 required
                 placeholder="Enter your email"
-                aria-describedby="register-email-error"
               />
-              <p id="register-email-error" class="text-red-500 text-xs hidden">
-                Please enter a valid email address.
-              </p>
             </div>
 
             <div>
@@ -200,14 +173,7 @@
                 required
                 minlength="8"
                 placeholder="Enter a password (min 8 characters)"
-                aria-describedby="register-password-error"
               />
-              <p
-                id="register-password-error"
-                class="text-red-500 text-xs hidden"
-              >
-                Password must be at least 8 characters long.
-              </p>
             </div>
 
             <div>
@@ -224,14 +190,7 @@
                 required
                 minlength="8"
                 placeholder="Confirm your password"
-                aria-describedby="confirm-password-error"
               />
-              <p
-                id="confirm-password-error"
-                class="text-red-500 text-xs hidden"
-              >
-                Passwords do not match.
-              </p>
             </div>
 
             <button
@@ -256,7 +215,6 @@
       </main>
     </div>
 
-    <!-- Footer -->
     <footer
       class="bg-white bg-gradient-to-r from-white to-gray-100 py-5 mt-auto z-10 shadow-t-lg"
     >

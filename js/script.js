@@ -45,4 +45,14 @@ document.addEventListener('DOMContentLoaded', () => {
   handleSkeletonLoader('skeleton-loader', 'content-feed-wrapper', 1500)
 
   handleSkeletonLoader('skeleton-loader-profile', 'profile-content', 1500)
+
+  // New Post Form Toggle
+  const createPostBtn = document.getElementById('create-post-btn')
+  const postFormWrapper = document.getElementById('new-post-form-wrapper')
+
+  if (createPostBtn && postFormWrapper) {
+    createPostBtn.addEventListener('click', () => {
+      postFormWrapper.classList.toggle('hidden')
+    })
+  }
 })
