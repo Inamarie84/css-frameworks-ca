@@ -12,13 +12,21 @@
       href="/images/favicon-16x16.png"
     />
     <link rel="manifest" href="/images/site.webmanifest" />
-    <link rel="stylesheet" href="/css/style.css" />
-    <script src="/js/script.js" defer></script>
+    <link rel="stylesheet" href="./css/style.css" />
+    <script src="./js/script.js" defer></script>
+
     <title>RunSocial</title>
   </head>
   <body
     class="min-h-screen bg-custom-bg bg-cover bg-center bg-no-repeat flex flex-col relative"
   >
+    <a
+      href="#main"
+      class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 bg-white text-[#2C3E50] px-3 py-2 rounded"
+    >
+      Skip to content
+    </a>
+
     <div
       class="absolute inset-0 bg-white opacity-80 pointer-events-none z-0"
     ></div>
@@ -38,13 +46,14 @@
             src="images/runsociallogo.mp4"
             autoplay
             muted
+            playsinline
             class="w-20 h-20 rounded-full shadow-md mr-4"
-            aria-label="RunSocial logo animation"
+            aria-hidden="true"
           ></video>
         </div>
       </header>
 
-      <main class="container mx-auto my-7 px-4">
+      <main id="main" class="container mx-auto my-7 px-4">
         <section
           class="bg-light-gray bg-opacity-70 rounded-md mb-10 max-w-md mx-auto shadow-lg"
         >
@@ -67,7 +76,7 @@
 
         <section class="max-w-md mx-auto">
           <h3 class="text-custom-pink mb-6 text-2xl">Log In or Sign up:</h3>
-          <form id="login-form" action="/profile/index.html" class="space-y-4">
+          <form id="login-form" action="./profile/index.html" class="space-y-4">
             <div>
               <label
                 for="login-email"
@@ -78,7 +87,7 @@
                 type="email"
                 id="login-email"
                 name="email"
-                class="w-full p-3 mt-1 border rounded-md"
+                class="w-full p-3 mt-1 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#C2A873] focus:border-[#C2A873]"
                 required
                 placeholder="Enter your email"
               />
@@ -94,7 +103,7 @@
                 type="password"
                 id="login-password"
                 name="password"
-                class="w-full p-3 mt-1 border rounded-md"
+                class="w-full p-3 mt-1 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#C2A873] focus:border-[#C2A873]"
                 required
                 minlength="8"
                 placeholder="Enter your password"
@@ -126,7 +135,11 @@
             </div>
           </form>
 
-          <form id="register-form" action="/profile" class="space-y-4 hidden">
+          <form
+            id="register-form"
+            action="./profile/index.html"
+            class="space-y-4 hidden"
+          >
             <div>
               <label
                 for="register-username"
@@ -137,7 +150,7 @@
                 type="text"
                 id="register-username"
                 name="username"
-                class="w-full p-3 mt-1 border rounded-md"
+                class="w-full p-3 mt-1 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#C2A873] focus:border-[#C2A873]"
                 required
                 placeholder="Choose a username"
               />
@@ -153,7 +166,7 @@
                 type="email"
                 id="register-email"
                 name="email"
-                class="w-full p-3 mt-1 border rounded-md"
+                class="w-full p-3 mt-1 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#C2A873] focus:border-[#C2A873]"
                 required
                 placeholder="Enter your email"
               />
@@ -169,7 +182,7 @@
                 type="password"
                 id="register-password"
                 name="password"
-                class="w-full p-3 mt-1 border rounded-md"
+                class="w-full p-3 mt-1 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#C2A873] focus:border-[#C2A873]"
                 required
                 minlength="8"
                 placeholder="Enter a password (min 8 characters)"
@@ -186,7 +199,7 @@
                 type="password"
                 id="confirm-password"
                 name="confirm-password"
-                class="w-full p-3 mt-1 border rounded-md"
+                class="w-full p-3 mt-1 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#C2A873] focus:border-[#C2A873]"
                 required
                 minlength="8"
                 placeholder="Confirm your password"
@@ -195,7 +208,7 @@
 
             <button
               type="submit"
-              class="w-full bg-teal text-dark-grey shadow-lg font-semibold p-3 rounded-md hover:bg-hover-teal hover:text-white"
+              class="w-full bg-teal text-dark-grey shadow-lg font-semibold p-3 rounded-md hover:bg-hover-teal hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C2A873] transition-colors"
             >
               Sign Up
             </button>
