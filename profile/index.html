@@ -19,6 +19,13 @@
   <body
     class="bg-teal bg-opacity-10 min-h-screen grid grid-rows-[auto_1fr_auto]"
   >
+    <a
+      href="#main"
+      class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 bg-white text-[#2C3E50] px-3 py-2 rounded"
+    >
+      Skip to content
+    </a>
+
     <header
       class="bg-white bg-gradient-to-r from-white to-gray-100 shadow-lg py-2"
     >
@@ -31,12 +38,14 @@
           >
             <video
               id="logo-video"
-              src="/images/runsociallogo.mp4"
+              src="images/runsociallogo.mp4"
               autoplay
               muted
-              class="w-20 h-20 rounded-full shadow-md"
-              aria-label="RunSocial logo animation"
+              playsinline
+              class="w-20 h-20 rounded-full shadow-md mr-4"
+              aria-hidden="true"
             ></video>
+
             <span class="sr-only">Home</span>
           </a>
           <div class="hidden md:flex items-center space-x-1">
@@ -128,7 +137,7 @@
       </nav>
     </header>
 
-    <main class="container mx-auto my-7">
+    <main id="main" class="container mx-auto my-7">
       <div id="skeleton-loader-profile" class="container mx-auto my-7">
         <div class="animate-pulse">
           <div class="flex justify-center">
