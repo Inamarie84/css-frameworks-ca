@@ -4,7 +4,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (btn && menu) {
     btn.addEventListener('click', () => {
-      menu.classList.toggle('hidden')
+      const nowHidden = menu.classList.toggle('hidden')
+      // if menu is hidden, expanded=false; if visible, expanded=true
+      btn.setAttribute('aria-expanded', String(!nowHidden))
     })
   }
 
