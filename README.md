@@ -62,6 +62,7 @@
 - /profile/index.html
 
 4. Build a minified stylesheet for production:
+
    ```bash
    npm run build
    ```
