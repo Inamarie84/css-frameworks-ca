@@ -69,6 +69,8 @@
 
 ## Project Structure
 
+```text
+
 css-frameworks-ca/
 ├─ css/
 │ ├─ input.css # Tailwind source
@@ -76,11 +78,13 @@ css-frameworks-ca/
 ├─ js/
 │ └─ script.js # Small UI interactions
 ├─ images/ # Favicons, thumbnails, etc.
-├─ index.html # Auth page
+├─ index.html # Auth page (login/register)
 ├─ feed/
-│ └─ index.html
+│ └─ index.html # Feed page
 └─ profile/
-└─ index.html
+└─ index.html # Profile page
+
+```
 
 ## Accessibility & Performance Improvements (Portfolio 2)
 
@@ -125,3 +129,7 @@ css-frameworks-ca/
 - The branch **`css-frameworks`** remains open as a PR per the brief’s requirement.
 - Tailwind is installed/configured via **npm** with **dev** and **prod** scripts.
 - No framework mixing: **Tailwind only** (no Sass/Bootstrap in this option).
+
+```
+
+```
