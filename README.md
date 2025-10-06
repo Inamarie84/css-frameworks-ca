@@ -1,43 +1,46 @@
-# CSS Frameworks — Social Media UI (Tailwind)
+# RunSocial — CSS Frameworks CA (Tailwind)
 
-**Branch:** `css-frameworks` (open PR into `main`)  
-**Assignment:** Build a responsive front end for a social media app using a CSS framework.
+**Live demo:** https://run-social.netlify.app/  
+**Repository (branch):** https://github.com/Inamarie84/css-frameworks-ca/tree/css-frameworks
+
+---
+
+## Overview
+
+RunSocial is a responsive front-end for a social running app, built for the **CSS Frameworks** course assignment using **Tailwind CSS**.  
+It includes three pages per the brief: **Authentication**, **Feed**, and **Profile**—with mobile-friendly layout, form validation, and accessible UI patterns.
+
+---
 
 ## Pages
 
-- `/` – **Authentication** (login/register)
-  - HTML validation (email, password ≥ 8 chars)
-  - Toggle between login and register
-- `/feed/` – **Feed**
-  - Post cards (thumbnails, captions)
-  - Search input + sort select (UI only)
-  - “Create new post” form (UI only)
-  - Skeleton loader for perceived performance
-- `/profile/` – **Profile**
-  - Avatar, username, posts list
-  - Follow/Unfollow button
-  - Followers/Following counts
+- `/` — **Authentication** (login/register with HTML validation, min password length 8)
+- `/feed/` — **Feed** (post grid, search/sort UI, new post form, skeleton loader)
+- `/profile/` — **Profile** (avatar, username, list of posts, follow/followers)
 
-> **Note:** This is a UI/markup assignment. No backend/API; JS is minimal and limited to UI toggles.
+---
 
-## Stack
+## Tech Stack
 
-- **Tailwind CSS** (installed via npm; no CDN)
-- **Vanilla JS** for:
-  - Mobile menu toggle (with `aria-expanded`)
-  - Auth forms toggle (login/register)
-  - Skeleton loader reveal
-  - “Create new post” form toggle
+- **Tailwind CSS** (npm; no CDN)
+- Vanilla **HTML** + a tiny bit of **JS** for menu + form toggling
+- No additional frameworks required
 
-## Scripts
+---
 
-```json
-{
-  "scripts": {
-    "dev": "tailwindcss -i ./css/input.css -o ./css/style.css --watch",
-    "build": "tailwindcss -i ./css/input.css -o ./css/style.css --minify"
-  }
-}
+## Getting Started
+
+### Prerequisites
+- Node **18+**
+- npm **9+**
+
+### Installation
+```bash
+git clone https://github.com/Inamarie84/css-frameworks-ca.git
+cd css-frameworks-ca
+git checkout css-frameworks
+npm install
+
 ```
 
 ## Development
@@ -66,25 +69,6 @@
    ```bash
    npm run build
    ```
-
-## Project Structure
-
-```text
-
-css-frameworks-ca/
-├─ css/
-│ ├─ input.css # Tailwind source
-│ └─ style.css # Built output (generated)
-├─ js/
-│ └─ script.js # Small UI interactions
-├─ images/ # Favicons, thumbnails, etc.
-├─ index.html # Auth page (login/register)
-├─ feed/
-│ └─ index.html # Feed page
-└─ profile/
-└─ index.html # Profile page
-
-```
 
 ## Accessibility & Performance Improvements (Portfolio 2)
 
@@ -130,6 +114,10 @@ css-frameworks-ca/
 - Tailwind is installed/configured via **npm** with **dev** and **prod** scripts.
 - No framework mixing: **Tailwind only** (no Sass/Bootstrap in this option).
 
-```
+
+## Contact
+
+- LinkedIn: <https://www.linkedin.com/in/ina-marie-forseth-66a7b232/>
+
 
 ```
