@@ -31,10 +31,12 @@ It includes three pages per the brief: **Authentication**, **Feed**, and **Profi
 ## Getting Started
 
 ### Prerequisites
+
 - Node **18+**
 - npm **9+**
 
 ### Installation
+
 ```bash
 git clone https://github.com/Inamarie84/css-frameworks-ca.git
 cd css-frameworks-ca
@@ -114,10 +116,10 @@ npm install
 - Tailwind is installed/configured via **npm** with **dev** and **prod** scripts.
 - No framework mixing: **Tailwind only** (no Sass/Bootstrap in this option).
 
-
 ## Contact
 
 - LinkedIn: <https://www.linkedin.com/in/ina-marie-forseth-66a7b232/>
 
+```
 
 ```
