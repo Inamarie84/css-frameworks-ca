@@ -1,5 +1,7 @@
 # RunSocial — CSS Frameworks CA (Tailwind)
 
+![RunSocial — homepage](/images/homepage.jpg)
+
 **Live demo:** https://run-social.netlify.app/  
 **Repository (branch):** https://github.com/Inamarie84/css-frameworks-ca/tree/css-frameworks
 
@@ -7,10 +9,15 @@
 
 ## Overview
 
-RunSocial is a responsive front-end for a social running app, built for the **CSS Frameworks** course assignment using **Tailwind CSS**.  
+RunSocial is a responsive front-end for a social running app, built for the **CSS Frameworks** course using **Tailwind CSS**.  
 It includes three pages per the brief: **Authentication**, **Feed**, and **Profile**—with mobile-friendly layout, form validation, and accessible UI patterns.
 
----
+## Features
+
+- Responsive layout (Auth, Feed, Profile)
+- Accessible navigation (Skip link, visible focus)
+- Stable image loading (intrinsic sizes + consistent aspect)
+- Lightweight JS (menu / form toggles only)
 
 ## Pages
 
@@ -18,12 +25,10 @@ It includes three pages per the brief: **Authentication**, **Feed**, and **Profi
 - `/feed/` — **Feed** (post grid, search/sort UI, new post form, skeleton loader)
 - `/profile/` — **Profile** (avatar, username, list of posts, follow/followers)
 
----
-
 ## Tech Stack
 
 - **Tailwind CSS** (npm; no CDN)
-- Vanilla **HTML** + a tiny bit of **JS** for menu + form toggling
+- Vanilla **HTML** + a tiny bit of **JS** (menu + form toggling)
 - No additional frameworks required
 
 ---
@@ -35,7 +40,7 @@ It includes three pages per the brief: **Authentication**, **Feed**, and **Profi
 - Node **18+**
 - npm **9+**
 
-### Installation
+### Install
 
 ```bash
 git clone https://github.com/Inamarie84/css-frameworks-ca.git
@@ -43,34 +48,24 @@ cd css-frameworks-ca
 git checkout css-frameworks
 npm install
 
+
 ```
 
-## Development
+## Develop (static)
 
-1. Install deps:
+Serve the folder with any static server (e.g. **VS Code Live Server**) and open:
 
-   ```bash
-   npm install
+- `/index.html`
+- `/feed/index.html`
+- `/profile/index.html`
 
-   ```
+## Build CSS
 
-2. Start dev server:
-   ```bash
-   npm run dev
-   ```
-3. Serve the folder with a static server (e.g. VS Code Live Server) and open:
+```bash
+npm run build   # builds/minifies Tailwind CSS to /css/style.css
+```
 
-- /index.html
-
-- /feed/index.html
-
-- /profile/index.html
-
-4. Build a minified stylesheet for production:
-
-   ```bash
-   npm run build
-   ```
+Note: If you have a watch/dev script locally, it simply rebuilds Tailwind on file changes. It’s not required to view the static pages.
 
 ## Accessibility & Performance Improvements (Portfolio 2)
 
