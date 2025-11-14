@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Profile page RunSocial" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/images/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/images/site.webmanifest" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <script src="../js/script.js" defer></script>
+    <title>Profile | RunSocial</title>
+  </head>
+  <body
+    class="bg-teal bg-opacity-10 min-h-screen grid grid-rows-[auto_1fr_auto]"
+  >
+    <a
+      href="#main"
+      class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 bg-white text-[#2C3E50] px-3 py-2 rounded"
+    >
+      Skip to content
+    </a>
+
+    <header
+      class="bg-white bg-gradient-to-r from-white to-gray-100 shadow-lg py-2"
+    >
+      <nav class="container mx-auto text-lg font-normal">
+        <div class="flex justify-between">
+          <a
+            href="/"
+            class="flex items-center py-4 px-4"
+            aria-label="Go to home page"
+          >
+            <video
+              id="logo-video"
+              src="/images/runsociallogo.mp4"
+              autoplay
+              muted
+              playsinline
+              preload="metadata"
+              class="w-20 h-20 rounded-full shadow-md mr-4"
+              aria-hidden="true"
+            ></video>
+
+            <span class="sr-only">Home</span>
+          </a>
+          <div class="hidden md:flex items-center space-x-1">
+            <a
+              href="/"
+              class="py-4 px-4 text-custom-pink font-normal hover:text-light-custom-pink transition duration-300"
+              >Home</a
+            >
+            <a
+              href="/profile/index.html"
+              class="py-2 px-4 text-custom-pink border-b-2 border-custom-pink"
+              >Profile</a
+            >
+            <a
+              href="/feed/index.html"
+              class="py-4 px-4 text-custom-pink font-normal hover:text-light-custom-pink transition duration-300"
+              >Feed</a
+            >
+            <a
+              href=""
+              class="py-4 px-4 text-custom-pink font-normal hover:text-light-custom-pink transition duration-300"
+              >About and Contact</a
+            >
+          </div>
+          <div class="hidden md:flex items-center space-x-3">
+            <a
+              href="/"
+              class="py-4 px-2 font-normal text-custom-pink rounded hover:bg-light-custom-pink hover:text-dark-gray transition duration-300"
+              >Log out</a
+            >
+          </div>
+
+          <div class="flex md:hidden items-center">
+            <button class="mr-4" id="menu-btn">
+              <svg
+                class="w-8 h-8 text-custom-pink hover:bg-light-custom-pink hover:text-dark-gray"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path d="M4 6h16M4 12h16M4 18h16"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="hidden" id="mobile-menu">
+          <ul class="text-center">
+            <li>
+              <a
+                href="/"
+                class="block text-base py-4 px-2 hover:bg-light-custom-pink hover:text-dark-gray transition duration-300"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a
+                href="/profile/index.html"
+                class="block text-base py-4 px-2 bg-custom-pink text-white"
+                >Profile</a
+              >
+            </li>
+            <li>
+              <a
+                href="/feed/index.html"
+                class="block text-base py-4 px-2 hover:bg-light-custom-pink hover:text-dark-gray transition duration-300"
+                >RunSocial Feed</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="block text-base py-4 px-2 hover:bg-light-custom-pink hover:text-dark-gray transition duration-300"
+                >Contact Us</a
+              >
+            </li>
+            <li>
+              <a
+                href="/"
+                class="block text-base py-4 px-2 hover:bg-light-custom-pink hover:text-dark-gray transition duration-300"
+                >Log Out</a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main" class="container mx-auto my-7">
+      <div id="skeleton-loader-profile" class="container mx-auto my-7">
+        <div class="animate-pulse">
+          <div class="flex justify-center">
+            <div class="w-40 h-40 bg-gray-300 rounded-full mb-4"></div>
+          </div>
+          <div class="h-8 bg-gray-300 rounded mx-auto max-w-xs mb-4"></div>
+          <div class="h-4 bg-gray-300 rounded mx-auto max-w-sm mb-4"></div>
+          <div class="h-12 bg-gray-300 rounded mx-auto max-w-md mb-4"></div>
+          <div class="grid grid-cols-1 gap-6 mt-8">
+            <div class="h-64 bg-gray-300 rounded w-full"></div>
+            <div class="h-64 bg-gray-300 rounded w-full"></div>
+            <div class="h-64 bg-gray-300 rounded w-full"></div>
+          </div>
+        </div>
+      </div>
+
+      <div id="profile-content" class="hidden">
+        <section class="flex flex-col items-center text-center">
+          <img
+            src="/images/profilepic.jpeg"
+            alt="the user of the profile running with in a competition"
+            class="w-40 h-40 rounded-full border-4 border-custom-pink mb-4"
+          />
+          <h1 class="text-3xl font-semibold text-dark-gray">#InaRuns</h1>
+          <p class="text-xl text-teal mt-2">
+            <span class="font-semibold">Followers: </span>120 |
+            <span class="font-semibold">Following: </span>180
+          </p>
+          <button
+            class="mt-4 py-2 px-6 bg-custom-pink text-black font-semibold rounded-full shadow-lg hover:bg-light-custom-pink hover:text-dark-gray transition duration-300"
+          >
+            Follow
+          </button>
+        </section>
+
+        <section class="mt-8 text-center mb-10">
+          <h2 class="text-3xl font-light text-custom-pink mb-8">
+            #InaRuns' Posts
+          </h2>
+
+          <div class="flex justify-center mx-auto max-w-4xl px-4">
+            <div class="grid grid-cols-1 gap-10 w-full">
+              <div
+                class="bg-white bg-gradient-to-r from-white to-gray-100 p-4 rounded-lg shadow-md max-w-md mx-auto w-full"
+              >
+                <img
+                  src="/images/runner1.jpg"
+                  alt="Close-up of a person wearing orange and gray running shoes climbing worn, mossy concrete stairs."
+                  class="w-full h-32 object-cover rounded-lg mb-4"
+                />
+                <h3 class="text-xl font-normal text-custom-pink mb-4">
+                  Recent Run: 5K at Sunrise
+                </h3>
+                <p class="text-dark-gray">
+                  Had an amazing 5K run this morning at sunrise. It was a bit
+                  chilly, but the views were worth it! #MorningRun #5K
+                </p>
+              </div>
+
+              <div
+                class="bg-white bg-gradient-to-r from-white to-gray-100 p-4 rounded-lg shadow-md max-w-md mx-auto w-full"
+              >
+                <img
+                  src="/images/runner1.jpg"
+                  alt="Close-up of a person wearing orange and gray running shoes climbing worn, mossy concrete stairs."
+                  class="w-full h-32 object-cover rounded-lg mb-4"
+                />
+                <h3 class="text-xl font-normal text-custom-pink mb-4">
+                  Recent Run: 10K in the Park
+                </h3>
+                <p class="text-dark-gray">
+                  Enjoyed a beautiful 10K run through the park. The weather was
+                  perfect and the trails were peaceful. #ParkRun #10K
+                </p>
+              </div>
+
+              <div
+                class="bg-white bg-gradient-to-r from-white to-gray-100 p-4 rounded-lg shadow-md max-w-md mx-auto w-full"
+              >
+                <img
+                  src="/images/runner1.jpg"
+                  alt="Close-up of a person wearing orange and gray running shoes climbing worn, mossy concrete stairs."
+                  class="w-full h-32 object-cover rounded-lg mb-4"
+                />
+                <h3 class="text-xl font-normal text-custom-pink mb-4">
+                  Recent Run: Trail Running Adventure
+                </h3>
+                <p class="text-dark-gray">
+                  Tried out some trail running today, and it was amazing!
+                  Definitely more challenging, but the views were worth it.
+                  #TrailRun #Adventure
+                </p>
+              </div>
+
+              <div
+                class="bg-white bg-gradient-to-r from-white to-gray-100 p-4 rounded-lg shadow-md max-w-md mx-auto w-full"
+              >
+                <img
+                  src="/images/runner1.jpg"
+                  alt="Close-up of a person wearing orange and gray running shoes climbing worn, mossy concrete stairs."
+                  class="w-full h-32 object-cover rounded-lg mb-4"
+                />
+                <h3 class="text-xl font-normal text-custom-pink mb-4">
+                  Recent Run: Evening Jog
+                </h3>
+                <p class="text-dark-gray">
+                  A relaxed evening jog to clear my mind. Sometimes, it's just
+                  about enjoying the run. #EveningJog #Relaxation
+                </p>
+              </div>
+
+              <div
+                class="bg-white bg-gradient-to-r from-white to-gray-100 p-4 rounded-lg shadow-md max-w-md mx-auto w-full"
+              >
+                <img
+                  src="/images/runner1.jpg"
+                  alt="Close-up of a person wearing orange and gray running shoes climbing worn, mossy concrete stairs."
+                  class="w-full h-32 object-cover rounded-lg mb-4"
+                />
+                <h3 class="text-xl font-normal text-custom-pink mb-4">
+                  Recent Run: 5K Speed Workout
+                </h3>
+                <p class="text-dark-gray">
+                  Did a speed workout today with intervals. Feeling strong and
+                  ready for the next race! #SpeedRun #Workout
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer
+      class="bg-white bg-gradient-to-r from-white to-gray-100 py-5 mt-auto z-10 shadow-t-lg"
+    >
+      <p class="container mx-auto text-center">Copyright &copy; 2024</p>
+      <p class="font-heading text-custom-pink text-lg text-center">RunSocial</p>
+    </footer>
+  </body>
+</html>

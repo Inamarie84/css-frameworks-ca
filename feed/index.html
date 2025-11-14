@@ -1,0 +1,814 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Feed page RunSocial" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/images/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/images/site.webmanifest" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <script src="../js/script.js" defer></script>
+
+    <title>Feed | RunSocial</title>
+  </head>
+  <body class="bg-teal bg-opacity-10 min-h-screen flex flex-col">
+    <a
+      href="#main"
+      class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 bg-white text-[#2C3E50] px-3 py-2 rounded"
+    >
+      Skip to content
+    </a>
+
+    <header
+      class="bg-white bg-gradient-to-r from-white to-gray-100 shadow-lg py-2"
+    >
+      <nav class="container mx-auto text-lg font-normal">
+        <div class="flex justify-between">
+          <a
+            href="/"
+            class="flex items-center py-4 px-4"
+            aria-label="Go to home page"
+          >
+            <video
+              id="logo-video"
+              src="/images/runsociallogo.mp4"
+              autoplay
+              muted
+              playsinline
+              preload="metadata"
+              class="w-20 h-20 rounded-full shadow-md mr-4"
+              aria-hidden="true"
+            ></video>
+
+            <span class="sr-only">Home</span>
+          </a>
+          <div class="hidden md:flex items-center space-x-1">
+            <a
+              href="/"
+              class="py-4 px-4 text-custom-pink font-normal hover:text-light-custom-pink transition duration-300"
+              >Home</a
+            >
+            <a
+              href="/profile/index.html"
+              class="py-4 px-4 text-custom-pink font-normal hover:text-light-custom-pink transition duration-300"
+              >Profile</a
+            >
+            <a
+              href="/feed/index.html"
+              class="py-2 px-4 text-custom-pink border-b-2 border-custom-pink"
+              >Feed</a
+            >
+            <a
+              href=""
+              class="py-4 px-4 text-custom-pink font-normal hover:text-light-custom-pink transition duration-300"
+              >About and Contact</a
+            >
+          </div>
+          <div class="hidden md:flex items-center space-x-3">
+            <a
+              href="/"
+              class="py-4 px-2 font-normal text-custom-pink rounded hover:bg-light-custom-pink hover:text-dark-gray transition duration-300"
+              >Log out</a
+            >
+          </div>
+
+          <div class="flex md:hidden items-center">
+            <button
+              class="mr-4"
+              id="menu-btn"
+              aria-controls="mobile-menu"
+              aria-expanded="false"
+            >
+              <!-- svg -->
+
+              <svg
+                class="w-8 h-8 text-custom-pink hover:bg-light-custom-pink hover:text-dark-gray"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path d="M4 6h16M4 12h16M4 18h16"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="hidden" id="mobile-menu">
+          <ul class="text-center">
+            <li>
+              <a
+                href="/"
+                class="block text-base py-4 px-2 hover:bg-light-custom-pink hover:text-dark-gray transition duration-300"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a
+                href="/profile/index.html"
+                class="block text-base py-4 px-2 hover:bg-light-custom-pink hover:text-dark-gray transition duration-300"
+                >Profile</a
+              >
+            </li>
+            <li>
+              <a
+                href="/feed/index.html"
+                class="block text-base py-4 px-2 bg-custom-pink text-white"
+                >RunSocial Feed</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="block text-base py-4 px-2 hover:bg-light-custom-pink hover:text-dark-gray transition duration-300"
+                >Contact Us</a
+              >
+            </li>
+            <li>
+              <a
+                href="/"
+                class="block text-base py-4 px-2 hover:bg-light-custom-pink hover:text-dark-gray transition duration-300"
+                >Log Out</a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <main
+      id="main"
+      class="container mx-auto my-7 flex flex-col items-center px-4"
+    >
+      <h1 class="text-3xl font-light text-custom-pink py-4 mb-8">
+        RunSocial Feed
+      </h1>
+
+      <div class="sticky top-0 bg-white z-10 shadow-md p-4 w-full">
+        <div
+          class="flex flex-col sm:flex-row sm:gap-4 sm:items-center justify-between mb-2"
+        >
+          <div class="w-full sm:w-1/3">
+            <label for="search-bar" class="sr-only">Search posts</label>
+            <input
+              type="text"
+              id="search-bar"
+              placeholder="Search posts..."
+              class="w-full px-4 py-2 text-dark-gray rounded-lg shadow-sm border border-gray-300 focus:ring-custom-pink focus:border-custom-pink"
+            />
+          </div>
+
+          <div class="w-full sm:w-1/3 mt-4 sm:mt-0">
+            <label for="sort-options" class="sr-only">Sort posts</label>
+            <select
+              id="sort-options"
+              class="w-full px-4 py-2 text-dark-gray rounded-lg shadow-sm border border-gray-300 focus:ring-custom-pink focus:border-custom-pink"
+            >
+              <option value="recent">Sort by: Most Recent</option>
+              <option value="popular">Sort by: Most Popular</option>
+              <option value="followers">Sort by: Most Followers</option>
+            </select>
+          </div>
+
+          <div class="w-full sm:w-1/3 mt-4 sm:mt-0">
+            <button
+              id="create-post-btn"
+              class="w-full py-2 px-4 bg-custom-pink text-black rounded-lg shadow-lg hover:bg-light-custom-pink transition duration-300"
+            >
+              Create New Post
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div
+        id="new-post-form-wrapper"
+        class="w-full max-w-lg mx-auto mb-8 hidden"
+      >
+        <form
+          id="new-post-form"
+          class="bg-white bg-gradient-to-r from-white to-gray-100 p-6 rounded-lg shadow-md"
+        >
+          <h2 class="text-lg font-medium text-custom-pink mb-4">
+            Create a New Post
+          </h2>
+          <div class="mb-4">
+            <label
+              for="post-title"
+              class="block text-sm font-medium text-dark-gray mb-1"
+              >Title</label
+            >
+            <input
+              type="text"
+              id="post-title"
+              name="post-title"
+              placeholder="Enter post title"
+              class="w-full px-4 py-2 rounded-lg shadow-sm border border-gray-300 focus:ring-custom-pink focus:border-custom-pink"
+            />
+          </div>
+          <div class="mb-4">
+            <label
+              for="post-content"
+              class="block text-sm font-medium text-dark-gray mb-1"
+              >Content</label
+            >
+            <textarea
+              id="post-content"
+              name="post-content"
+              rows="4"
+              placeholder="Write your post..."
+              class="w-full px-4 py-2 rounded-lg shadow-sm border border-gray-300 focus:ring-custom-pink focus:border-custom-pink"
+            ></textarea>
+          </div>
+          <div class="mb-4">
+            <label
+              for="post-image"
+              class="block text-sm font-medium text-dark-gray mb-1"
+              >Upload Image</label
+            >
+            <input
+              type="file"
+              id="post-image"
+              name="post-image"
+              class="w-full px-4 py-2 text-dark-gray rounded-lg shadow-sm border border-gray-300 focus:ring-custom-pink focus:border-custom-pink"
+            />
+          </div>
+          <button
+            type="submit"
+            class="w-full py-2 px-4 bg-custom-pink text-black rounded-lg shadow-lg hover:bg-light-custom-pink transition duration-300"
+          >
+            Post
+          </button>
+        </form>
+      </div>
+
+      <div
+        id="skeleton-loader"
+        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 w-full mt-10"
+      >
+        <div
+          class="bg-white bg-gradient-to-r from-white to-gray-100 p-4 rounded-lg shadow-md max-w-md mx-auto w-full animate-pulse"
+        >
+          <div class="relative h-32 bg-gray-300 rounded-lg mb-4"></div>
+          <div class="h-6 bg-gray-300 rounded mb-4 w-3/4"></div>
+          <div class="h-4 bg-gray-300 rounded mb-2 w-full"></div>
+          <div class="h-4 bg-gray-300 rounded w-5/6"></div>
+        </div>
+
+        <div
+          class="bg-white bg-gradient-to-r from-white to-gray-100 p-4 rounded-lg shadow-md max-w-md mx-auto w-full animate-pulse"
+        >
+          <div class="relative h-32 bg-gray-300 rounded-lg mb-4"></div>
+          <div class="h-6 bg-gray-300 rounded mb-4 w-3/4"></div>
+          <div class="h-4 bg-gray-300 rounded mb-2 w-full"></div>
+          <div class="h-4 bg-gray-300 rounded w-5/6"></div>
+        </div>
+
+        <div
+          class="bg-white bg-gradient-to-r from-white to-gray-100 p-4 rounded-lg shadow-md max-w-md mx-auto w-full animate-pulse"
+        >
+          <div class="relative h-32 bg-gray-300 rounded-lg mb-4"></div>
+          <div class="h-6 bg-gray-300 rounded mb-4 w-3/4"></div>
+          <div class="h-4 bg-gray-300 rounded mb-2 w-full"></div>
+          <div class="h-4 bg-gray-300 rounded w-5/6"></div>
+        </div>
+
+        <div
+          class="bg-white bg-gradient-to-r from-white to-gray-100 p-4 rounded-lg shadow-md max-w-md mx-auto w-full animate-pulse"
+        >
+          <div class="relative h-32 bg-gray-300 rounded-lg mb-4"></div>
+          <div class="h-6 bg-gray-300 rounded mb-4 w-3/4"></div>
+          <div class="h-4 bg-gray-300 rounded mb-2 w-full"></div>
+          <div class="h-4 bg-gray-300 rounded w-5/6"></div>
+        </div>
+
+        <div
+          class="bg-white bg-gradient-to-r from-white to-gray-100 p-4 rounded-lg shadow-md max-w-md mx-auto w-full animate-pulse"
+        >
+          <div class="relative h-32 bg-gray-300 rounded-lg mb-4"></div>
+          <div class="h-6 bg-gray-300 rounded mb-4 w-3/4"></div>
+          <div class="h-4 bg-gray-300 rounded mb-2 w-full"></div>
+          <div class="h-4 bg-gray-300 rounded w-5/6"></div>
+        </div>
+
+        <div
+          class="bg-white bg-gradient-to-r from-white to-gray-100 p-4 rounded-lg shadow-md max-w-md mx-auto w-full animate-pulse"
+        >
+          <div class="relative h-32 bg-gray-300 rounded-lg mb-4"></div>
+          <div class="h-6 bg-gray-300 rounded mb-4 w-3/4"></div>
+          <div class="h-4 bg-gray-300 rounded mb-2 w-full"></div>
+          <div class="h-4 bg-gray-300 rounded w-5/6"></div>
+        </div>
+
+        <div
+          class="bg-white bg-gradient-to-r from-white to-gray-100 p-4 rounded-lg shadow-md max-w-md mx-auto w-full animate-pulse"
+        >
+          <div class="relative h-32 bg-gray-300 rounded-lg mb-4"></div>
+          <div class="h-6 bg-gray-300 rounded mb-4 w-3/4"></div>
+          <div class="h-4 bg-gray-300 rounded mb-2 w-full"></div>
+          <div class="h-4 bg-gray-300 rounded w-5/6"></div>
+        </div>
+
+        <div
+          class="bg-white bg-gradient-to-r from-white to-gray-100 p-4 rounded-lg shadow-md max-w-md mx-auto w-full animate-pulse"
+        >
+          <div class="relative h-32 bg-gray-300 rounded-lg mb-4"></div>
+          <div class="h-6 bg-gray-300 rounded mb-4 w-3/4"></div>
+          <div class="h-4 bg-gray-300 rounded mb-2 w-full"></div>
+          <div class="h-4 bg-gray-300 rounded w-5/6"></div>
+        </div>
+      </div>
+
+      <section id="content-feed-wrapper" class="hidden">
+        <div
+          id="content-feed"
+          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 w-full mt-10"
+        >
+          <div
+            class="bg-white bg-gradient-to-r from-white to-gray-100 p-4 rounded-lg shadow-md max-w-md mx-auto w-full group relative"
+          >
+            <div class="relative">
+              <img
+                src="/images/runner1.jpg"
+                alt="Close-up of a person wearing orange and gray running shoes climbing worn, mossy concrete stairs."
+                width="800"
+                height="500"
+                loading="lazy"
+                class="w-full h-auto rounded-lg object-cover aspect-[16/10] mb-4"
+              />
+
+              <div
+                class="absolute inset-0 bg-dark-gray bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center rounded-lg"
+              >
+                <span class="text-white text-lg sm:text-xl font-semibold">
+                  Great job!!!
+                </span>
+              </div>
+              <div
+                class="absolute top-4 right-4 text-white group-hover:text-custom-pink transition-colors"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="w-6 h-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"
+                  />
+                </svg>
+              </div>
+            </div>
+            <div class="flex justify-between items-center">
+              <h2 class="text-teal font-normal text-sm mb-2">#MikeTheRunner</h2>
+              <button
+                class="ml-4 px-2 py-1 bg-light-custom-pink text-dark-gray font-normal text-xs rounded-full shadow-lg hover:bg-dark-gray hover:text-light-gray transition duration-300"
+              >
+                Unfollow
+              </button>
+            </div>
+            <h3 class="text-xl font-normal text-custom-pink mb-4">
+              Back to Running After Injury
+            </h3>
+            <p class="text-dark-gray">
+              I’m back on track after my injury. Today was my first run without
+              pain, and it feels like such a victory!
+            </p>
+          </div>
+
+          <div
+            class="bg-white bg-gradient-to-r from-white to-gray-100 p-4 rounded-lg shadow-md max-w-md mx-auto w-full group relative"
+          >
+            <div class="relative">
+              <img
+                src="/images/runner1.jpg"
+                alt="Close-up of a person wearing orange and gray running shoes climbing worn, mossy concrete stairs."
+                width="800"
+                height="500"
+                loading="lazy"
+                class="w-full h-auto rounded-lg object-cover aspect-[16/10] mb-4"
+              />
+
+              <div
+                class="absolute inset-0 bg-dark-gray bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center rounded-lg"
+              >
+                <span class="text-white text-lg sm:text-xl font-semibold">
+                  Great job!!!
+                </span>
+              </div>
+              <div
+                class="absolute top-4 right-4 text-white group-hover:text-custom-pink transition-colors"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="w-6 h-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"
+                  />
+                </svg>
+              </div>
+            </div>
+
+            <div class="flex justify-between items-center">
+              <h2 class="text-teal font-normal text-sm mb-2">#UsainBolt</h2>
+              <button
+                class="ml-4 px-2 py-1 bg-custom-pink text-black font-normal text-xs rounded-full shadow-lg hover:bg-light-custom-pink transition duration-300"
+              >
+                Follow
+              </button>
+            </div>
+
+            <h3 class="text-xl font-normal text-custom-pink mb-4">
+              Sunrise Sprint
+            </h3>
+            <p class="text-dark-gray">
+              Started my day with a refreshing 5K run at sunrise. The cool
+              breeze and golden sky made it totally worth waking up early. Who
+              else loves morning runs?
+            </p>
+          </div>
+
+          <div
+            class="bg-white bg-gradient-to-r from-white to-gray-100 p-4 rounded-lg shadow-md max-w-md mx-auto w-full group relative"
+          >
+            <div class="relative">
+              <img
+                src="/images/runner1.jpg"
+                alt="Close-up of a person wearing orange and gray running shoes climbing worn, mossy concrete stairs."
+                width="800"
+                height="500"
+                loading="lazy"
+                class="w-full h-auto rounded-lg object-cover aspect-[16/10] mb-4"
+              />
+
+              <div
+                class="absolute inset-0 bg-dark-gray bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center rounded-lg"
+              >
+                <span class="text-white text-lg sm:text-xl font-semibold">
+                  Great job!!!
+                </span>
+              </div>
+
+              <div
+                class="absolute top-4 right-4 text-white group-hover:text-custom-pink transition-colors"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="w-6 h-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"
+                  />
+                </svg>
+              </div>
+            </div>
+
+            <div class="flex justify-between items-center">
+              <h2 class="text-teal font-normal text-sm mb-2">
+                #TheTrailMaster
+              </h2>
+              <button
+                class="ml-4 px-2 py-1 bg-light-custom-pink text-dark-gray font-normal text-xs rounded-full shadow-lg hover:bg-dark-gray hover:text-light-gray transition duration-300"
+              >
+                Unfollow
+              </button>
+            </div>
+            <h3 class="text-xl font-normal text-custom-pink mb-4">
+              Trailblazer Adventure
+            </h3>
+            <p class="text-dark-gray">
+              Explored an amazing new trail today! It was a bit rocky, but the
+              views of the forest were incredible. Running off the beaten path
+              is the best therapy!
+            </p>
+          </div>
+
+          <div
+            class="bg-white bg-gradient-to-r from-white to-gray-100 p-4 rounded-lg shadow-md max-w-md mx-auto w-full group relative"
+          >
+            <div class="relative">
+              <img
+                src="/images/runner1.jpg"
+                alt="Close-up of a person wearing orange and gray running shoes climbing worn, mossy concrete stairs."
+                width="800"
+                height="500"
+                loading="lazy"
+                class="w-full h-auto rounded-lg object-cover aspect-[16/10] mb-4"
+              />
+
+              <div
+                class="absolute inset-0 bg-dark-gray bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center rounded-lg"
+              >
+                <span class="text-white text-lg sm:text-xl font-semibold">
+                  Great job!!!
+                </span>
+              </div>
+              <div
+                class="absolute top-4 right-4 text-white group-hover:text-custom-pink transition-colors"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="w-6 h-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"
+                  />
+                </svg>
+              </div>
+            </div>
+            <div class="flex justify-between items-center">
+              <h2 class="text-teal font-normal text-sm mb-2">#MarathonMan</h2>
+              <button
+                class="ml-4 px-2 py-1 bg-light-custom-pink text-dark-gray font-normal text-xs rounded-full shadow-lg hover:bg-dark-gray hover:text-light-gray transition duration-300"
+              >
+                Unfollow
+              </button>
+            </div>
+            <h3 class="text-xl font-normal text-custom-pink mb-4">
+              Marathon Milestone
+            </h3>
+            <p class="text-dark-gray">
+              Training for my first marathon is no joke! Hit 15 miles today—my
+              longest run yet. Every step felt like progress. Any tips for
+              staying motivated?
+            </p>
+          </div>
+
+          <div
+            class="bg-white bg-gradient-to-r from-white to-gray-100 p-4 rounded-lg shadow-md max-w-md mx-auto w-full group relative"
+          >
+            <div class="relative">
+              <img
+                src="/images/runner1.jpg"
+                alt="Close-up of a person wearing orange and gray running shoes climbing worn, mossy concrete stairs."
+                width="800"
+                height="500"
+                loading="lazy"
+                class="w-full h-auto rounded-lg object-cover aspect-[16/10] mb-4"
+              />
+
+              <div
+                class="absolute inset-0 bg-dark-gray bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center rounded-lg"
+              >
+                <span class="text-white text-lg sm:text-xl font-semibold">
+                  Great job!!!
+                </span>
+              </div>
+
+              <div
+                class="absolute top-4 right-4 text-white group-hover:text-custom-pink transition-colors"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="w-6 h-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"
+                  />
+                </svg>
+              </div>
+            </div>
+
+            <div class="flex justify-between items-center">
+              <h2 class="text-teal font-normal text-sm mb-2">#MayaJogs</h2>
+              <button
+                class="ml-4 px-2 py-1 bg-light-custom-pink text-dark-gray font-normal text-xs rounded-full shadow-lg hover:bg-dark-gray hover:text-light-gray transition duration-300"
+              >
+                Unfollow
+              </button>
+            </div>
+            <h3 class="text-xl font-normal text-custom-pink mb-4">
+              Run Crew Reunion
+            </h3>
+            <p class="text-dark-gray">
+              There's nothing like running with friends! Our crew smashed a 10K
+              together today, followed by coffee and laughs. Running really
+              brings people together!
+            </p>
+          </div>
+
+          <div
+            class="bg-white bg-gradient-to-r from-white to-gray-100 p-4 rounded-lg shadow-md max-w-md mx-auto w-full group relative"
+          >
+            <div class="relative">
+              <img
+                src="/images/runner1.jpg"
+                alt="Close-up of a person wearing orange and gray running shoes climbing worn, mossy concrete stairs."
+                width="800"
+                height="500"
+                loading="lazy"
+                class="w-full h-auto rounded-lg object-cover aspect-[16/10] mb-4"
+              />
+
+              <div
+                class="absolute inset-0 bg-dark-gray bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center rounded-lg"
+              >
+                <span class="text-white text-lg sm:text-xl font-semibold">
+                  Great job!!!
+                </span>
+              </div>
+
+              <div
+                class="absolute top-4 right-4 text-white group-hover:text-custom-pink transition-colors"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="w-6 h-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"
+                  />
+                </svg>
+              </div>
+            </div>
+
+            <div class="flex justify-between items-center">
+              <h2 class="text-teal font-normal text-sm mb-2">#RyanRunsFast</h2>
+              <button
+                class="ml-4 px-2 py-1 bg-light-custom-pink text-dark-gray font-normal text-xs rounded-full shadow-lg hover:bg-dark-gray hover:text-light-gray transition duration-300"
+              >
+                Unfollow
+              </button>
+            </div>
+            <h3 class="text-xl font-normal text-custom-pink mb-4">
+              Record-Breaking Day
+            </h3>
+            <p class="text-dark-gray">
+              I did it! Beat my personal best on the 5K today by shaving off 2
+              minutes. Hard work and consistency pay off. What’s your proudest
+              running achievement?
+            </p>
+          </div>
+
+          <div
+            class="bg-white bg-gradient-to-r from-white to-gray-100 p-4 rounded-lg shadow-md max-w-md mx-auto w-full group relative"
+          >
+            <div class="relative">
+              <img
+                src="/images/runner1.jpg"
+                alt="Close-up of a person wearing orange and gray running shoes climbing worn, mossy concrete stairs."
+                width="800"
+                height="500"
+                loading="lazy"
+                class="w-full h-auto rounded-lg object-cover aspect-[16/10] mb-4"
+              />
+
+              <div
+                class="absolute inset-0 bg-dark-gray bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center rounded-lg"
+              >
+                <span class="text-white text-lg sm:text-xl font-semibold">
+                  Great job!!!
+                </span>
+              </div>
+
+              <div
+                class="absolute top-4 right-4 text-white group-hover:text-custom-pink transition-colors"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="w-6 h-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"
+                  />
+                </svg>
+              </div>
+            </div>
+
+            <div class="flex justify-between items-center">
+              <h2 class="text-teal font-normal text-sm mb-2">#ScenicRunner</h2>
+              <button
+                class="ml-4 px-2 py-1 bg-custom-pink text-black font-normal text-xs rounded-full shadow-lg hover:bg-light-custom-pink transition duration-300"
+              >
+                Follow
+              </button>
+            </div>
+            <h3 class="text-xl font-normal text-custom-pink mb-4">
+              Scenic Route Escape
+            </h3>
+            <p class="text-dark-gray">
+              Found a new scenic route by the lake. Running along the water with
+              the mountains in the background was like a dream. It’s now my
+              favorite spot!
+            </p>
+          </div>
+
+          <div
+            class="post bg-white bg-gradient-to-r from-white to-gray-100 p-4 rounded-lg shadow-md max-w-md mx-auto w-full group relative"
+          >
+            <div class="relative">
+              <img
+                src="/images/runner1.jpg"
+                alt="Close-up of a person wearing orange and gray running shoes climbing worn, mossy concrete stairs."
+                width="800"
+                height="500"
+                loading="lazy"
+                class="w-full h-auto rounded-lg object-cover aspect-[16/10] mb-4"
+              />
+
+              <div
+                class="absolute inset-0 bg-dark-gray bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center rounded-lg"
+              >
+                <span class="text-white text-lg sm:text-xl font-semibold">
+                  Great job!!!
+                </span>
+              </div>
+
+              <div
+                class="absolute top-4 right-4 text-white group-hover:text-custom-pink transition-colors"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="w-6 h-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"
+                  />
+                </svg>
+              </div>
+            </div>
+
+            <div class="flex justify-between items-center">
+              <h2 class="text-teal font-normal text-sm mb-2">#SocialRunner</h2>
+              <button
+                class="ml-4 px-2 py-1 bg-custom-pink text-black font-normal text-xs rounded-full shadow-lg hover:bg-light-custom-pink transition duration-300"
+              >
+                Follow
+              </button>
+            </div>
+            <h3 class="text-xl font-normal text-custom-pink mb-4">
+              Community Fun Run
+            </h3>
+            <p class="text-dark-gray">
+              IJoined a community fun run this weekend. So many runners with
+              incredible energy! It’s inspiring to see how running brings people
+              from all walks of life together.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer
+      class="bg-white bg-gradient-to-r from-white to-gray-100 py-5 mt-auto z-10 shadow-t-lg"
+    >
+      <p class="container mx-auto text-center">Copyright &copy; 2024</p>
+      <p class="font-heading text-custom-pink text-lg text-center">RunSocial</p>
+    </footer>
+  </body>
+</html>

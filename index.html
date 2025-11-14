@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="page RunSocial" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/images/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/images/site.webmanifest" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <script src="./js/script.js" defer></script>
+
+    <title>RunSocial</title>
+  </head>
+  <body
+    class="min-h-screen bg-custom-bg bg-cover bg-center bg-no-repeat flex flex-col relative"
+  >
+    <a
+      href="#main"
+      class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 bg-white text-[#2C3E50] px-3 py-2 rounded"
+    >
+      Skip to content
+    </a>
+
+    <div
+      class="absolute inset-0 bg-white opacity-80 pointer-events-none z-0"
+    ></div>
+
+    <div class="relative z-10 flex-grow">
+      <header
+        class="bg-white shadow-lg bg-gradient-to-r from-white to-gray-100 py-4 flex items-center justify-center mb-16"
+      >
+        <div class="flex items-center">
+          <h1
+            class="font-heading font-thin text-custom-pink text-3xl sm:text-4xl md:text-5xl py-4 mr-4 ml-4"
+          >
+            Join our SOCIAL Running Community
+          </h1>
+          <video
+            id="logo-video"
+            src="/images/runsociallogo.mp4"
+            autoplay
+            muted
+            playsinline
+            preload="metadata"
+            class="w-20 h-20 rounded-full shadow-md mr-4"
+            aria-hidden="true"
+          ></video>
+        </div>
+      </header>
+
+      <main id="main" class="container mx-auto my-7 px-4">
+        <section
+          class="bg-light-gray bg-opacity-70 rounded-md mb-10 max-w-md mx-auto shadow-lg"
+        >
+          <h2
+            class="text-3xl sm:text-4xl font-light text-center text-custom-pink py-4"
+          >
+            RunSocial
+          </h2>
+          <p class="text-xl text-dark-gray text-center px-4">
+            Track your runs, stay motivated, boost performance, and celebrate
+            your achievements with fellow SOCIAL runners!
+          </p>
+
+          <hr class="w-1/2 border-t-2 border-gray-300 my-2 mx-auto" />
+
+          <p class="text-2xl font-semibold text-teal text-center py-8">
+            Join RunSocial!
+          </p>
+        </section>
+
+        <section class="max-w-md mx-auto">
+          <h3 class="text-custom-pink mb-6 text-2xl">Log In or Sign up:</h3>
+          <form id="login-form" action="./profile/index.html" class="space-y-4">
+            <div>
+              <label
+                for="login-email"
+                class="block text-sm font-medium text-dark-gray"
+                >Email</label
+              >
+              <input
+                type="email"
+                id="login-email"
+                name="email"
+                class="w-full p-3 mt-1 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#C2A873] focus:border-[#C2A873]"
+                required
+                placeholder="Enter your email"
+              />
+            </div>
+
+            <div>
+              <label
+                for="login-password"
+                class="block text-sm font-medium text-dark-gray"
+                >Password</label
+              >
+              <input
+                type="password"
+                id="login-password"
+                name="password"
+                class="w-full p-3 mt-1 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#C2A873] focus:border-[#C2A873]"
+                required
+                minlength="8"
+                placeholder="Enter your password"
+              />
+            </div>
+
+            <div class="flex justify-between items-center">
+              <a href="/" class="text-sm font-semibold text-blue-600"
+                >Forgot Password?</a
+              >
+            </div>
+
+            <button
+              type="submit"
+              class="w-full bg-teal text-dark-grey shadow-lg font-semibold p-3 rounded-md hover:bg-hover-teal hover:text-white"
+            >
+              Log In
+            </button>
+
+            <div class="mt-4 text-center">
+              <span>Don't have an account?</span>
+              <button
+                type="button"
+                id="show-register"
+                class="text-blue-600 font-semibold"
+              >
+                Sign Up
+              </button>
+            </div>
+          </form>
+
+          <form
+            id="register-form"
+            action="./profile/index.html"
+            class="space-y-4 hidden"
+          >
+            <div>
+              <label
+                for="register-username"
+                class="block text-sm font-medium text-dark-gray"
+                >Username</label
+              >
+              <input
+                type="text"
+                id="register-username"
+                name="username"
+                class="w-full p-3 mt-1 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#C2A873] focus:border-[#C2A873]"
+                required
+                placeholder="Choose a username"
+              />
+            </div>
+
+            <div>
+              <label
+                for="register-email"
+                class="block text-sm font-medium text-dark-gray"
+                >Email</label
+              >
+              <input
+                type="email"
+                id="register-email"
+                name="email"
+                class="w-full p-3 mt-1 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#C2A873] focus:border-[#C2A873]"
+                required
+                placeholder="Enter your email"
+              />
+            </div>
+
+            <div>
+              <label
+                for="register-password"
+                class="block text-sm font-medium text-dark-gray"
+                >Password</label
+              >
+              <input
+                type="password"
+                id="register-password"
+                name="password"
+                class="w-full p-3 mt-1 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#C2A873] focus:border-[#C2A873]"
+                required
+                minlength="8"
+                placeholder="Enter a password (min 8 characters)"
+              />
+            </div>
+
+            <div>
+              <label
+                for="confirm-password"
+                class="block text-sm font-medium text-dark-gray"
+                >Confirm Password</label
+              >
+              <input
+                type="password"
+                id="confirm-password"
+                name="confirm-password"
+                class="w-full p-3 mt-1 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#C2A873] focus:border-[#C2A873]"
+                required
+                minlength="8"
+                placeholder="Confirm your password"
+              />
+            </div>
+
+            <button
+              type="submit"
+              class="w-full bg-teal text-dark-grey shadow-lg font-semibold p-3 rounded-md hover:bg-hover-teal hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C2A873] transition-colors"
+            >
+              Sign Up
+            </button>
+
+            <div class="mt-4 text-center">
+              <span>Already have an account?</span>
+              <button
+                type="button"
+                id="show-login"
+                class="text-blue-600 font-semibold"
+              >
+                Log In
+              </button>
+            </div>
+          </form>
+        </section>
+      </main>
+    </div>
+
+    <footer
+      class="bg-white bg-gradient-to-r from-white to-gray-100 py-5 mt-auto z-10 shadow-t-lg"
+    >
+      <p class="container mx-auto text-center">Copyright &copy; 2024</p>
+      <p class="font-heading text-custom-pink text-lg text-center">RunSocial</p>
+    </footer>
+  </body>
+</html>
